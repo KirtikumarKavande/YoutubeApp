@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/Sidebar";
-import CategoryBar from "@/components/CategoryBar";
+import CategoryBar from "@/components/home/CategoryBar";
 import VideoGrid from "@/components/VideoGrid";
 
 export default function Home() {

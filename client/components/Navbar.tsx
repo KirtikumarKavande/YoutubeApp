@@ -2,6 +2,7 @@
 
 import { Menu, Search, Video, Bell, User } from "lucide-react";
 import { useState } from "react";
+import ProfileDropdown from "./ProfileDropdown";
 
 interface NavbarProps {
   onMenuClick: () => void;
@@ -63,14 +64,16 @@ export default function Navbar({ onMenuClick }: NavbarProps) {
             <Bell className="w-6 h-6" />
             <span className="absolute top-1 right-1 w-2 h-2 bg-red-600 rounded-full"></span>
           </button>
-          <button
+          {/* <button
             className="p-2 hover:bg-gray-100 rounded-full transition-colors"
             aria-label="User menu"
           >
             <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center">
               <User className="w-5 h-5 text-white" />
             </div>
-          </button>
+          </button> */}
+
+          <ProfileDropdown />
         </div>
       </div>
     </nav>
