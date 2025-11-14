@@ -113,14 +113,22 @@ export default function CategoryBar() {
   return (
     <div
       ref={categoryMenuContainer}
-      className="sticky top-14 z-30 bg-white border-b border-gray-200 overflow-x-scroll scrollbar-hide"
-      style={{ width: "calc(100vw - 260px)" }}
+      className="sticky top-14 z-30 border-b overflow-x-scroll scrollbar-hide transition-colors duration-200"
+      style={{
+        width: "calc(100vw - 260px)",
+        backgroundColor: 'var(--bg)',
+        borderColor: 'var(--border)'
+      }}
     >
       <div className="flex items-center gap-3 px-4 py-3">
         {/* Only show left button if scrollable AND not at start */}
         {isScrollable && !isDisableScrolling.leftSide && (
           <button
-            className="p-1.5 hover:bg-gray-600 rounded-full transition-colors shrink-0 fixed z-50 left-60 bg-black"
+            className="p-1.5 rounded-full transition-colors shrink-0 fixed z-50 left-60 hover:opacity-80"
+            style={{
+              backgroundColor: 'var(--border)',
+              color: 'var(--text)'
+            }}
             onClick={() => {
               scrollHorizontal("left");
             }}
@@ -132,11 +140,11 @@ export default function CategoryBar() {
         {categories.map((category, index) => (
           <button
             key={index}
-            className={`px-3 py-1.5 rounded-lg whitespace-nowrap text-sm font-medium transition-colors shrink-0 ${
-              index === 0
-                ? "bg-black text-white"
-                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-            }`}
+            className="px-3 py-1.5 rounded-lg whitespace-nowrap text-sm font-medium transition-colors shrink-0"
+            style={{
+              backgroundColor: index === 0 ? 'var(--text)' : 'var(--border)',
+              color: index === 0 ? 'var(--bg)' : 'var(--text)'
+            }}
           >
             {category}
           </button>
@@ -145,7 +153,11 @@ export default function CategoryBar() {
         {/* Only show right button if scrollable AND not at end */}
         {isScrollable && !isDisableScrolling.rightSide && (
           <button
-            className="p-1.5 hover:bg-gray-600 rounded-full transition-colors shrink-0 fixed z-50 right-4 bg-black"
+            className="p-1.5 rounded-full transition-colors shrink-0 fixed z-50 right-4 hover:opacity-80"
+            style={{
+              backgroundColor: 'var(--border)',
+              color: 'var(--text)'
+            }}
             onClick={() => {
               scrollHorizontal("right");
             }}

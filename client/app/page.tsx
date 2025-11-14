@@ -10,7 +10,7 @@ export default function Home() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div style={{ backgroundColor: 'var(--bg)', color: 'var(--text)' }} className="min-h-screen transition-colors duration-200">
       {/* Navbar */}
       <Navbar onMenuClick={() => setIsSidebarOpen(!isSidebarOpen)} />
 

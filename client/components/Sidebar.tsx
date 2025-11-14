@@ -51,9 +51,14 @@ export default function Sidebar({ isOpen }: SidebarProps) {
     <>
       {/* Sidebar */}
       <aside
-        className={`fixed left-0 top-14 h-[calc(100vh-3.5rem)] bg-white transition-all duration-300 overflow-y-auto z-40 border-r border-gray-200 ${
+        className={`fixed left-0 top-14 h-[calc(100vh-3.5rem)] transition-all duration-300 overflow-y-auto z-40 border-r ${
           isOpen ? "w-60" : "w-20"
         }`}
+        style={{
+          backgroundColor: 'var(--bg)',
+          borderColor: 'var(--border)',
+          color: 'var(--text)'
+        }}
       >
         <div className="py-2">
           {/* Main Menu */}
@@ -63,9 +68,13 @@ export default function Sidebar({ isOpen }: SidebarProps) {
                 key={index}
                 className={`w-full flex items-center gap-6 px-3 py-2.5 rounded-lg transition-colors ${
                   item.active
-                    ? "bg-gray-100 font-medium text-gray-900"
-                    : "hover:bg-gray-100 text-gray-900"
+                    ? "font-medium"
+                    : ""
                 } ${!isOpen && "justify-center"}`}
+                style={{
+                  backgroundColor: item.active ? 'var(--border)' : 'transparent',
+                  color: 'var(--text)'
+                }}
               >
                 <item.icon className="w-6 h-6 flex-shrink-0" />
                 {isOpen && <span className="text-sm font-medium">{item.label}</span>}
@@ -73,7 +82,7 @@ export default function Sidebar({ isOpen }: SidebarProps) {
             ))}
           </div>
 
-          {isOpen && <div className="border-t border-gray-200 my-2"></div>}
+          {isOpen && <div className="border-t my-2" style={{ borderColor: 'var(--border)' }}></div>}
 
           {/* Library Section */}
           {isOpen && (
@@ -81,7 +90,10 @@ export default function Sidebar({ isOpen }: SidebarProps) {
               {libraryItems.map((item, index) => (
                 <button
                   key={index}
-                  className="w-full flex items-center gap-6 px-3 py-2.5 rounded-lg hover:bg-gray-100 transition-colors text-gray-900"
+                  className="w-full flex items-center gap-6 px-3 py-2.5 rounded-lg transition-colors"
+                  style={{
+                    color: 'var(--text)'
+                  }}
                 >
                   <item.icon className="w-6 h-6 flex-shrink-0" />
                   <span className="text-sm font-medium">{item.label}</span>
@@ -90,18 +102,21 @@ export default function Sidebar({ isOpen }: SidebarProps) {
             </div>
           )}
 
-          {isOpen && <div className="border-t border-gray-200 my-2"></div>}
+          {isOpen && <div className="border-t my-2" style={{ borderColor: 'var(--border)' }}></div>}
 
           {/* Explore Section */}
           {isOpen && (
             <div className="px-3">
-              <h3 className="px-3 py-2 text-sm font-semibold text-gray-900">
+              <h3 className="px-3 py-2 text-sm font-semibold" style={{ color: 'var(--text)' }}>
                 Explore
               </h3>
               {exploreItems.map((item, index) => (
                 <button
                   key={index}
-                  className="w-full flex items-center gap-6 px-3 py-2.5 rounded-lg hover:bg-gray-100 transition-colors text-gray-900"
+                  className="w-full flex items-center gap-6 px-3 py-2.5 rounded-lg transition-colors"
+                  style={{
+                    color: 'var(--text)'
+                  }}
                 >
                   <item.icon className="w-6 h-6 flex-shrink-0" />
                   <span className="text-sm font-medium">{item.label}</span>
