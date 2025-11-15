@@ -3,7 +3,7 @@
 import { Menu, Search, Video, Bell } from "lucide-react";
 import { useState } from "react";
 import ProfileDropdown from "./ProfileDropdown";
-import { ThemeToggle } from "./globals/ThemeToggle";
+import { ThemeToggle } from "./ThemeToggle";
 
 interface NavbarProps {
   onMenuClick: () => void;

@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Navbar from "@/components/Navbar";
-import Sidebar from "@/components/Sidebar";
+import Navbar from "@/components/globals/navbar/Navbar";
+import Sidebar from "@/components/globals/Sidebar";
 import VideoPlayer from "@/components/VideoPlayer";
 
 // Sample video data - in real app, this would come from API/database

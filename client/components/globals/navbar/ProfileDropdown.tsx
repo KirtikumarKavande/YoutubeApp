@@ -23,7 +23,7 @@ const ProfileDropdown = () => {
       {/* Avatar Button */}
       <button
         onClick={() => setOpen(!open)}
-        className="w-10 h-10 rounded-full overflow-hidden border border-gray-600"
+        className="w-10 h-10 rounded-full overflow-hidden border border-gray-600 flex justify-center items-center"
       >
         {/* <img
           src="https://via.placeholder.com/150"
@@ -36,7 +36,7 @@ const ProfileDropdown = () => {
 
       {/* Dropdown Menu */}
       {open && (
-        <div className="absolute right-0 mt-2 w-80 bg-neutral-900 text-gray-200 rounded-xl shadow-lg border border-neutral-700 overflow-hidden z-50">
+        <div style={{ backgroundColor: 'var(--bg)', borderColor: 'var(--border)', color: 'var(--text)' }} className="absolute right-0 mt-2 w-80 bg-neutral-900 text-gray-200 rounded-xl shadow-lg border border-neutral-700 overflow-hidden z-50">
           {/* Header */}
           <div className="flex items-center gap-3 p-4 border-b border-neutral-700">
             {/* <img
@@ -117,7 +117,7 @@ const ProfileDropdown = () => {
 };
 
 const DropdownItem = ({ icon, label }) => (
-  <button className="w-full flex items-center gap-3 px-4 py-2 hover:bg-neutral-800 transition-colors text-sm text-gray-300">
+  <button style={{ backgroundColor: 'var(--bg)', borderColor: 'var(--border)', color: 'var(--text)' }} className="w-full flex items-center gap-3 px-4 py-2 hover:bg-neutral-800 transition-colors text-sm text-gray-300">
     {icon}
     <span>{label}</span>
   </button>

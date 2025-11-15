@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import Navbar from "@/components/Navbar";
-import Sidebar from "@/components/Sidebar";
+import Navbar from "@/components/globals/navbar/Navbar";
+import Sidebar from "@/components/globals/Sidebar";
 import CategoryBar from "@/components/home/CategoryBar";
-import VideoGrid from "@/components/VideoGrid";
+import VideoGrid from "@/components/home/video/VideoGrid";
 
 export default function Home() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
